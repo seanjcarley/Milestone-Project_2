@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700|Exo:100,200,300,400,500,600,700');
+
+/*----------------------------------------------------------------------------*/
+/* Variables */
+/*----------------------------------------------------------------------------*/
+
+:root {
+    --clr-scm-11: #363635;
+    --clr-scm-12: #2e86ab;
+    --clr-scm-13: #f6f5ae;
+    --clr-scm-14: #f5f749;
+    --clr-scm-15: #f24236;
+    --clr-scm-21: #d9e5d6;
+    --clr-scm-22: #00a7e1;
+    --clr-scm-23: #eddea4;
+    --clr-scm-24: #f7a072;
+    --clr-scm-25: #ff9b42;
+    --clr-scm-31: #006ba6;
+    --clr-scm-32: #0496ff;
+    --clr-scm-33: #ffbc42;
+    --clr-scm-34: #d81159;
+    --clr-scm-35: #8f2d56;
+}
+
+/*----------------------------------------------------------------------------*/
+/* Colours */
+/*----------------------------------------------------------------------------*/
+
+.menu-item-color-1 {
+    background-color: var(--clr-scm-11);
+}
+
+.menu-item-color-2 {
+    background-color: var(--clr-scm-12);
+}
+
+.menu-item-color-3 {
+    background-color: var(--clr-scm-13);
+}
+
+.menu-item-color-4 {
+    background-color: var(--clr-scm-14);
+}
+
+.menu-item-color-5 {
+    background-color: var(--clr-scm-15);
+}
+
+.section-side-section {
+    background-color: var(--clr-scm-11);
+    color: var(--clr-scm-15);
+    padding: 1rem;
+}
+
+.section-main-section {
+    background-color: #2e86ab;
+    color: var(--clr-scm-12);
+    padding: 1rem;
+}
+
+/*----------------------------------------------------------------------------*/
+/* body */
+/*----------------------------------------------------------------------------*/
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Exo", sans-serif;
+    min-height: 100vh;
+    background-color: var(--clr-scm-12); 
+}
+
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+
+.row {
+    margin: 0;
+}
+
+/*----------------------------------------------------------------------------*/
+/* Header */
+/*----------------------------------------------------------------------------*/
+
+header {
+    margin: 20;
+    background-color: var(--clr-scm-11);
+}
+
+#nav {
+    margin: 0;
+}
+
+#nav li {
+    padding: 0;
+}
+
+.header-image {
+    background: url("../images/keyboard.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+.hvr-sweep-to-bottom:before,
+.hvr-sweep-to-top:before,
+.hvr-sweep-to-right:before {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.list-inline-item:not(:last-child) {
+    margin-right: 0;
+}
+
+.menucontainer {
+    font-size: 0;
+    position: static;
+}
+
+.menuitem {
+    text-align: center;
+    padding: 0;
+}
+
+.menuitem a {
+    width: 100%;
+    text-decoration: none;
+    height: 100%;
+}
+
+.menuitem a i {
+    padding-top: 0.5rem;
+    display: block;
+    font-size: 1.5rem;
+    color: var(--clr-scm-11);
+}
+
+.menuitem span {
+    display: block;
+    font-size: 1rem;
+    color: var(--clr-scm-11);
+}
+
+.name {
+    font-weight: 500;
+    /* font-size: 2rem; */
+	text-align: center;
+    color: var(--clr-scm-13);
+}
+
+.opaque-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+	height: 18vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.page-header {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.tag-line {
+	font-weight: 200;
+    /* font-size: 1.5rem; */
+	text-align: center;
+    color: var(--clr-scm-14);
+}
+
+/*----------------------------------------------------------------------------*/
+/* Footer */
+/*----------------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------------*/
+/* Text Modifications */
+/*----------------------------------------------------------------------------*/
+
+.bold {
+    font-weight: 600;
+}
+
+.lowercase {
+    text-transform: lowercase;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+/*----------------------------------------------------------------------------*/
+/* Media Queries */
+/*----------------------------------------------------------------------------*/
+
+@media (min-width:768px) {	
+	.name {
+		padding-left: 1rem;
+		text-align: left;
+	}
+	
+	.tag-line {
+		text-align: left;
+		padding-left: 1rem;
+	}
+}
+
+@media (min-height:1366px) {
+	.opaque-overlay {
+		height: 10vh;
+	}
+}
