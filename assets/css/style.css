@@ -5,11 +5,11 @@
 /*----------------------------------------------------------------------------*/
 
 :root {
-    --clr-scm-11: #363635;
-    --clr-scm-12: #2e86ab;
-    --clr-scm-13: #f6f5ae;
-    --clr-scm-14: #f5f749;
-    --clr-scm-15: #f24236;
+    --clr-scm-11: #363635; /* dark_grey */
+    --clr-scm-12: #2e86ab; /* blue */
+    --clr-scm-13: #f6f5ae; /* pale yellow */
+    --clr-scm-14: #f5f749; /* less pale yellow */
+    --clr-scm-15: #f24236; /* red */
     --clr-scm-21: #d9e5d6;
     --clr-scm-22: #00a7e1;
     --clr-scm-23: #eddea4;
@@ -44,18 +44,6 @@
 
 .menu-item-color-5 {
     background-color: var(--clr-scm-15);
-}
-
-.section-side-section {
-    background-color: var(--clr-scm-11);
-    color: var(--clr-scm-15);
-    padding: 1rem;
-}
-
-.section-main-section {
-    background-color: #2e86ab;
-    color: var(--clr-scm-12);
-    padding: 1rem;
 }
 
 /*----------------------------------------------------------------------------*/
@@ -174,9 +162,143 @@ header {
 }
 
 /*----------------------------------------------------------------------------*/
+/* Section */
+/*----------------------------------------------------------------------------*/
+
+section {
+	display: block;
+}
+
+/* Side-Section */
+.section-side-section {
+    background-color: var(--clr-scm-15);
+    color: var(--clr-scm-11);
+    padding: 1rem;
+}
+
+
+/* Main-Section */
+.section-main-section {
+    background-color: var(--clr-scm-11);
+    color: var(--clr-scm-15);
+    padding: 1rem;
+	min-height: 70vh;
+}
+
+/*----------------------------------------------------------------------------*/
 /* Footer */
 /*----------------------------------------------------------------------------*/
 
+footer {
+    margin: 0;
+    overflow: hidden;
+    background-color: var(--clr-scm-14);
+}
+
+.copyrite {
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: 400;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+}
+
+.footer-text {
+    margin: 0;
+    padding-left: 1rem;
+    padding-top: 1rem;
+}
+
+.footer-text a {
+    text-decoration: none;
+    color: var(--clr-scm-12);
+}
+
+.footer-text a:hover {
+    color: var(--clr-scm-15);
+}
+
+.social {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.social-icons li a i {
+    width: 2rem;
+    height: 2rem;
+    padding: 0.01em 0;
+    border-radius: 50%;
+    font-size: 1rem;
+    background-color: var(--clr-scm-11);
+    color: var(--clr-scm-12);
+    text-align: center;
+    line-height: 2rem;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+
+.social-icons li a i:hover {
+    background-color: var(--clr-scm-15);
+    color: var(--clr-scm-11);
+}
+
+.social-item span {
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+}
+
+/*----------------------------------------------------------------------------*/
+/* GAme Area - Simon Says */
+/*----------------------------------------------------------------------------*/
+
+.blue {
+	background: blue;
+	/* background: grey; */
+}
+
+.empty-block {
+	display: block;
+	text-align: center;
+	width: 5rem;
+	height:5rem;
+}
+
+.game-block {
+	display: block;
+	text-align: center;
+	width: 10rem;
+	height:10rem;
+}
+
+.game-block-pulse {
+	display: block;
+	text-align: center;
+	width: 15rem;
+	height:15rem;
+}
+
+.green {
+	background: green;
+	/* background: white; */
+}
+
+.red {
+	background: red;
+	/* background: black; */
+}
+
+.yellow {
+	background: yellow;
+	/* background: silver; */
+}
 
 /*----------------------------------------------------------------------------*/
 /* Text Modifications */
@@ -210,8 +332,60 @@ header {
 	}
 }
 
+@media (max-width: 767px) {
+	h4{
+		font-size: 1rem;
+		font-weight: 500;
+	}
+	
+	ul {
+		margin: 0;
+	}
+	
+	.copyrite {
+		text-align: center;
+		margin-top: 0.5rem;
+		font-weight: 200;
+		font-size: 0.75rem;
+	}
+	
+	.footer-text {
+		font-size:0.75;
+		padding: 0.1rem;
+		text-align: center;
+		margin: 0.1rem;
+	}
+	
+	.section-side-section {
+		display: none;
+	}
+	
+	.section-main-section {
+		min-height: 60vh;
+	}
+	
+	.social {
+		text-align: center;
+		margin: 0;
+		padding: 0;
+	}
+	
+	.social-icons li a i {
+		width: 1.5rem;
+		height: 1.5rem;
+		line-height: 1.5rem;
+		font-size: 0.75rem;
+		padding: 0;
+		margin: 0;
+	}
+}
+
 @media (min-height:1366px) {
 	.opaque-overlay {
 		height: 10vh;
+	}
+	
+	.section-main-section {
+		min-height: 80vh;
 	}
 }
