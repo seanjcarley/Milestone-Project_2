@@ -9,7 +9,7 @@
 	<script src="https://kit.fontawesome.com/d5901c0a36.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" type="text/css">
 	<link rel="stylesheet" href="./assets/css/Style.css">
-	<title>Time Wasters</title>
+	<title>Time Wasters</title>	
 </head>
 
 <body>
@@ -22,7 +22,7 @@
 		<div class="row no-gutters">
 			<div class="col 12 page-header">
 				<h1 class="name uppercase">Time Wasters</h1>
-				<h2 class="tag-line lowercase">Games to pass the time - <span class="uppercase bold">Simon Says!</span></h2>
+				<h2 class="tag-line lowercase mobile">Games to pass the time - <span class="uppercase bold">Simon Says!</span></h2>
 			</div>
 		</div>
 		<div class="row no-gutters">
@@ -89,6 +89,22 @@
 						</ol>
 					</div>
 				</div>
+				<div class="row mobile">
+					<div class="col">
+						<h3>Select your Difficulty level:</h3>
+					</div>
+				</div>
+				<div class="row mobile">
+					<div class="col-md-4">
+						<button id="easy" class="button">Easy</button>
+					</div>
+					<div class="col-md-4">
+						<button id="med" class="button">Medium</button>
+					</div>
+					<div class="col-md-4">
+						<button id="hard" class="button">Hard</button>
+					</div>
+				</div>
 			</div>
 			<div class="col-md-8 section-main-section">
 				<div class="row">
@@ -98,20 +114,25 @@
 				</div>
 				<div class="row">
 					<div class="col game-area">
-						<div class="row empty-block"></div>
+						<div class="row empty-block mobile"></div>
 						<div class="row">
 							<div class="col-md-2"></div>
-							<div class="col-md-3 red game-block"></div>
-							<div class="col-md-2"></div>
-							<div class="col-md-3 blue game-block"></div>
+							<div id="red" class="col-md-3 col-sm-4 red game-block"></div>
+							<div class="col-md-2 mobile"></div>
+							<div id="blue" class="col-md-3 col-sm-4 blue game-block"></div>
 							<div class="col-md-2"></div>
 						</div>
-						<div class="row empty-block"></div>
+						<div class="row empty-block mobile game_state">
+							<div class="col-md-5"></div>
+							<div class="col-md-2">
+							<button id="start" class="button">Start</button></div>
+							<div class="col-md-5"></div>
+						</div>
 						<div class="row">
 							<div class="col-md-2"></div>
-							<div class="col-md-3 yellow game-block"></div>
-							<div class="col-md-2"></div>
-							<div class="col-md-3 green game-block"></div>
+							<div id="yellow" class="col-md-3 col-sm-4 yellow game-block"></div>
+							<div class="col-md-2 mobile"></div>
+							<div id="green" class="col-md-3 col-sm-4 green game-block"></div>
 							<div class="col-md-2"></div>
 						</div>
 						<div class="row empty-block"></div>
@@ -130,7 +151,7 @@
 	<footer class="footer">
 		<div class="row">
 			<div class="col-md-3">
-				<h4 class="footer-text uppercase">Got a Suggestion?</h4>
+				<h4 class="footer-text uppercase mobile">Got a Suggestion?</h4>
 				<p class="footer-text lowercase">
 					<a href="#">
 						<span class="bold uppercase">Click Here</span>
@@ -139,7 +160,7 @@
 				</p>
 			</div>
 			<div class="col-md-6 social">
-				<h4 class="uppercase">Follow me on Social Media</h5>
+				<h4 class="uppercase mobile">Follow me on Social Media</h5>
 				<ul class="list-inline social-icons">
 					<li class="list-inline-item social-item">
 						<a target="_blank" href="#">
@@ -173,7 +194,8 @@
 <!-- ********************************************************************** -->
 <!-- /Footer -->
 <!-- ********************************************************************** -->
-
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+	<script src="./assets/js/scripts/simon.js"></script>
 </body>
 
 </html>

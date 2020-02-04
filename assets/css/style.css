@@ -176,13 +176,36 @@ section {
     padding: 1rem;
 }
 
+.button {
+	width:5rem;
+	height: 2rem;
+	text-align: center;
+	background-color: var(--clr-scm-11);
+	color: var(--clr-scm-15);
+	border: none;
+}
+
+.button:active {
+	background-color: var(--clr-scm-12);
+	color: var(--clr-scm-14);
+	border: none;
+}
+
+.button:hover {
+	font-weight: 600;
+}
+
+.hide {
+	display: none;
+}
+
 
 /* Main-Section */
 .section-main-section {
     background-color: var(--clr-scm-11);
     color: var(--clr-scm-15);
     padding: 1rem;
-	min-height: 70vh;
+	min-height: 75vh;
 }
 
 /*----------------------------------------------------------------------------*/
@@ -256,12 +279,28 @@ footer {
 }
 
 /*----------------------------------------------------------------------------*/
-/* GAme Area - Simon Says */
+/* Game Area - Simon Says */
 /*----------------------------------------------------------------------------*/
 
 .blue {
 	background: blue;
 	/* background: grey; */
+}
+
+.change-blue {
+	background: rgba(0,0,255,0.1) 
+}
+
+.change-green {
+	background: rgba(0,0255,0,0.1) 
+}
+
+.change-red {
+	background: rgba(0255,0,0,0.1) 
+}
+
+.change-yellow {
+	background: rgba(255,255,0,0.1) 
 }
 
 .empty-block {
@@ -286,6 +325,7 @@ footer {
 }
 
 .green {
+	display: block;
 	background: green;
 	/* background: white; */
 }
@@ -354,6 +394,10 @@ footer {
 		padding: 0.1rem;
 		text-align: center;
 		margin: 0.1rem;
+	}
+	
+	.mobile {
+		display: none;
 	}
 	
 	.section-side-section {
