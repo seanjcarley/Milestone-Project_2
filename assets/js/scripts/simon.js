@@ -13,8 +13,8 @@ $(document).ready(function () {
         dif = 11;
     })
     document.getElementById("start").addEventListener("click", function () {
-        pulseCallback(getSeq(dif));
-        console.log("Start Pressed");
+        pulse(getSeq(dif));
+        // console.log("Start Pressed");
     })
 
     //generate the sequence for the game:
@@ -42,34 +42,18 @@ $(document).ready(function () {
         return seq;
     }
 
-    /* function pulse(ary) {
-        for (i in ary) {
+
+    /* timer and async sourced from https://stackoverflow.com/questions/3583724/how-do-i-add-a-delay-in-a-javascript-loop */
+    function timer(ms) {
+        return new Promise(res => setTimeout(res, ms));
+    }
+    
+    async function pulse(ary) {
+        for (var i = 0; i < ary.length; i++) {
             changeCol(ary[i]);
             console.log(ary[i]);
+            await timer(1000);
         }
-    } */
-
-    var doPulseCallBack = function(callback) {
-        performPulseCallBack(ary, callback);
-    };
-
-    var callBackCounter = 0;
-
-    var pulseCallback = function(ary) {
-        if (callBackCounter < ary.length) {
-            doPulseCallBack(pulseCallback);
-        }
-        callBackCounter++;
-    };
-
-    doPulseCallBack(pulseCallback);
-
-    function performPulseCallBack(ary, callback) {  
-        if (callBackCounter < ary.length) {
-            changeCol(ary[callBackCounter]);
-        }
-        callBackCounter++;
-        callback();
     }
 
     function changeCol(num) {
