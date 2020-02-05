@@ -317,13 +317,6 @@ footer {
 	height:10rem;
 }
 
-.game-block-pulse {
-	display: block;
-	text-align: center;
-	width: 15rem;
-	height:15rem;
-}
-
 .green {
 	display: block;
 	background: green;

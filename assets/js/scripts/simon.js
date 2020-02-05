@@ -1,5 +1,6 @@
 $(document).ready(function () {
     dif = 1;
+    callBackCounter = 0;
     game_state = 0;
 
     document.getElementById("easy").addEventListener("click", function () {
@@ -12,7 +13,7 @@ $(document).ready(function () {
         dif = 11;
     })
     document.getElementById("start").addEventListener("click", function () {
-        pulse(getSeq(dif));
+        pulseCallback(getSeq(dif));
         console.log("Start Pressed");
     })
 
@@ -41,11 +42,34 @@ $(document).ready(function () {
         return seq;
     }
 
-    function pulse(ary) {
+    /* function pulse(ary) {
         for (i in ary) {
             changeCol(ary[i]);
             console.log(ary[i]);
         }
+    } */
+
+    var doPulseCallBack = function(callback) {
+        performPulseCallBack(ary, callback);
+    };
+
+    var callBackCounter = 0;
+
+    var pulseCallback = function(ary) {
+        if (callBackCounter < ary.length) {
+            doPulseCallBack(pulseCallback);
+        }
+        callBackCounter++;
+    };
+
+    doPulseCallBack(pulseCallback);
+
+    function performPulseCallBack(ary, callback) {  
+        if (callBackCounter < ary.length) {
+            changeCol(ary[callBackCounter]);
+        }
+        callBackCounter++;
+        callback();
     }
 
     function changeCol(num) {
