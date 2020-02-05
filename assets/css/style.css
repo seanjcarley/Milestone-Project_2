@@ -183,6 +183,8 @@ section {
 	background-color: var(--clr-scm-11);
 	color: var(--clr-scm-15);
 	border: none;
+	display: block;
+	margin: 0 auto;
 }
 
 .button:active {
@@ -206,6 +208,34 @@ section {
     color: var(--clr-scm-15);
     padding: 1rem;
 	min-height: 75vh;
+}
+
+#level {
+	text-align: center;
+	color: var(--clr-scm-15);
+	margin: auto;
+}
+
+#start,
+#reset {
+	width:5rem;
+	height: 2rem;
+	text-align: center;
+	background-color: var(--clr-scm-15);
+	color: var(--clr-scm-11);
+	border: none;
+}
+
+#start:active,
+#reset:active {
+	background-color: var(--clr-scm-14);
+	color: var(--clr-scm-12);
+	border: none;
+}
+
+#start:hover,
+#reset:hover {
+	font-weight: 600;
 }
 
 /*----------------------------------------------------------------------------*/
@@ -306,15 +336,15 @@ footer {
 .empty-block {
 	display: block;
 	text-align: center;
-	width: 5rem;
-	height:5rem;
+	width: 3rem;
+	height: 3rem;
 }
 
 .game-block {
 	display: block;
 	text-align: center;
 	width: 10rem;
-	height:10rem;
+	height: 10rem;
 }
 
 .green {

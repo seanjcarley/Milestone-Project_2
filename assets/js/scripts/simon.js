@@ -14,7 +14,9 @@ $(document).ready(function () {
     })
     document.getElementById("start").addEventListener("click", function () {
         pulse(getSeq(dif));
-        // console.log("Start Pressed");
+    })
+	document.getElementById("reset").addEventListener("click", function () {
+        resetGame();
     })
 
     //generate the sequence for the game:
@@ -22,17 +24,17 @@ $(document).ready(function () {
         let seq = [];
         let seq_count = 0;
         if (dif < 6) {
-            while (seq_count < (num * 4)) {
+            while (seq_count < (num + 2)) {
                 seq.push(Math.floor(Math.random() * 4));
                 seq_count++;
             }
         } else if (num < 10) {
-            while (seq_count < (num * 2)) {
+            while (seq_count < (num + 3)) {
                 seq.push(Math.floor(Math.random() * 4));
                 seq_count++;
             }
         } else {
-            while (seq_count < (num * 1.5)) {
+            while (seq_count < (num + 4)) {
                 seq.push(Math.floor(Math.random() * 4));
                 seq_count++;
             }
@@ -44,6 +46,16 @@ $(document).ready(function () {
 
 
     /* timer and async sourced from https://stackoverflow.com/questions/3583724/how-do-i-add-a-delay-in-a-javascript-loop */
+	/* A Promise is a proxy for a value not necessarily known when the promise 
+		is created. It allows you to associate handlers with an asynchronous 
+		action's eventual success value or failure reason. This lets 
+		asynchronous methods return values like synchronous methods: instead 
+		of immediately returning the final value, the asynchronous method 
+		returns a promise to supply the value at some point in the future. 
+		https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+	
+	*/
+		
     function timer(ms) {
         return new Promise(res => setTimeout(res, ms));
     }
@@ -51,11 +63,19 @@ $(document).ready(function () {
     async function pulse(ary) {
         for (var i = 0; i < ary.length; i++) {
             changeCol(ary[i]);
-            console.log(ary[i]);
-            await timer(1000);
+            //console.log(ary[i]);
+            if(ary.length < 6) {
+				await timer(1000);
+			} else if(ary.length < 10) {
+				await timer(800);
+			} else {
+				await timer(600);
+			}
         }
     }
 
+	// this function changes the colour of the block to indicate that the block
+	// is part of the sequence
     function changeCol(num) {
         if (num == 0) {
             document.getElementById("blue").classList.remove("blue");
@@ -94,9 +114,7 @@ $(document).ready(function () {
     }
 
     function resetGame() {
-        game_state = 0
-            seq = []
-            dif = 0
+		game_state = 0;
+		dif = 1;
     }
-
 })

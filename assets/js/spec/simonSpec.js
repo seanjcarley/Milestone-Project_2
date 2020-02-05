@@ -9,4 +9,18 @@ describe("SimonSays", function() {
 			expect(getSeq(dif)).toBe(dif)
 		});
 	});
+	describe("Change_Colour", function() {
+		it("should return colour", function () {
+			expect(changeCol(num)).toBe("Blue")
+		});
+		it("should return colour", function () {
+			expect(changeCol(num)).toBe("Green")
+		});
+		it("should return colour", function () {
+			expect(changeCol(num)).toBe("Red")
+		});
+		it("should return colour", function () {
+			expect(changeCol(num)).toBe("Yellow")
+		});
+	});
 });
