@@ -109,18 +109,23 @@
 			<div class="col-md-8 section-main-section">
 				<div class="row">
 					<div class="col">
-						<h3 class="uppercase">Simon Says!</h3>
+						<h3 class="uppercase mobile">Simon Says!</h3>
+						<h3 id="note-mob" class="uppercase desktop">Simon Says!</h3>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col game-area">
 						<div class="row empty-block mobile"></div>
 						<div class="row">
-							<div class="col-md-2"></div>
-							<div id="red" class="col-md-3 col-sm-4 red game-block"></div>
+							<div class="col-md-2 col-sm-2"></div>
+							<div id="red" class="col-md-3 col-sm-4 red game-block">
+								<button id="reset-mob" class="button desktop">Reset</button>
+							</div>
 							<div class="col-md-2 mobile"></div>
-							<div id="blue" class="col-md-3 col-sm-4 blue game-block"></div>
-							<div class="col-md-2"></div>
+							<div id="blue" class="col-md-3 col-sm-4 blue game-block">
+								<button id="start-mob" class="button desktop">Start</button>
+							</div>
+							<div class="col-md-2 col-sm2"></div>
 						</div>
 						<div class="row empty-block mobile"></div>
 						<div class="row mobile">
@@ -132,19 +137,25 @@
 								<button id="start" class="button">Start</button>
 							</div>
 							<div class="col-md-2">
-								<h4 id="level">Level: </h4>
+								<h4>Level: <span id="level"></span></h4>
 							</div>
 							<div class="col-md-3"></div>
 						</div>
 						<div class="row empty-block mobile"></div>
 						<div class="row">
-							<div class="col-md-2"></div>
-							<div id="yellow" class="col-md-3 col-sm-4 yellow game-block"></div>
+							<div class="col-md-2 col-sm-2"></div>
+							<div id="yellow" class="col-md-3 col-sm-4 yellow game-block">
+								<button id="med-mob" class="button desktop">Medium</button>
+							</div>
 							<div class="col-md-2 mobile"></div>
-							<div id="green" class="col-md-3 col-sm-4 green game-block"></div>
-							<div class="col-md-2"></div>
+							<div id="green" class="col-md-3 col-sm-4 green game-block">
+								<button id="hard-mob" class="button desktop">Hard</button>
+							</div>
+							<div class="col-md-2 col-sm-2"></div>
 						</div>
-						<div class="row empty-block"></div>
+						<div class="row mobile">
+							<div class="col-md-12"><h4 id="game-outcome"></h4></div>
+						</div>
 					</div>
 				</div>
 			</div>

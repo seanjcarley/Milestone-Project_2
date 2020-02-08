@@ -9,3 +9,4 @@ function getSeq(dif) {
 	}
 	return seq.length;
 }
+

@@ -203,6 +203,10 @@ section {
 
 
 /* Main-Section */
+.desktop {
+	display: none;
+}
+	
 .section-main-section {
     background-color: var(--clr-scm-11);
     color: var(--clr-scm-15);
@@ -210,10 +214,19 @@ section {
 	min-height: 75vh;
 }
 
+#game-outcome {
+	text-align: center;
+	margin: 1rem;
+}
+
 #level {
 	text-align: center;
 	color: var(--clr-scm-15);
 	margin: auto;
+}
+
+#note-mob {
+	margin: 0;
 }
 
 #start,
@@ -412,11 +425,20 @@ footer {
 		font-size: 0.75rem;
 	}
 	
+	.desktop {
+		display: block;
+		margin: 50% auto;
+	}
+	
 	.footer-text {
 		font-size:0.75;
 		padding: 0.1rem;
 		text-align: center;
 		margin: 0.1rem;
+	}
+	
+	.game-area {
+		margin: auto 0;
 	}
 	
 	.mobile {
