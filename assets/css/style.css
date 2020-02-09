@@ -55,7 +55,7 @@ body {
     margin: 0;
     font-family: "Exo", sans-serif;
     min-height: 100vh;
-    background-color: var(--clr-scm-12); 
+    background-color: var(--clr-scm-12);
 }
 
 .container-fluid {
@@ -206,12 +206,42 @@ section {
 .desktop {
 	display: none;
 }
-	
+
 .section-main-section {
     background-color: var(--clr-scm-11);
     color: var(--clr-scm-15);
     padding: 1rem;
-	min-height: 75vh;
+	  min-height: 75vh;
+}
+
+.slot-five {
+  /* background-color: blue; */
+  text-align: center;
+  margin: auto 0;
+}
+
+.slot-four {
+  /* background-color: green; */
+  text-align: center;
+  margin: auto 0;
+}
+
+.slot-one {
+  /* background-color: red; */
+  text-align: center;
+  margin: auto 0;
+}
+
+.slot-three {
+  /* background-color: yellow; */
+  text-align: center;
+  margin: auto 0;
+}
+
+.slot-two {
+  /* background-color: orange; */
+  text-align: center;
+  margin: auto 0;
 }
 
 #game-outcome {
@@ -331,19 +361,19 @@ footer {
 }
 
 .change-blue {
-	background: rgba(0,0,255,0.1) 
+	background: rgba(0,0,255,0.1)
 }
 
 .change-green {
-	background: rgba(0,0255,0,0.1) 
+	background: rgba(0,0255,0,0.1)
 }
 
 .change-red {
-	background: rgba(0255,0,0,0.1) 
+	background: rgba(0255,0,0,0.1)
 }
 
 .change-yellow {
-	background: rgba(255,255,0,0.1) 
+	background: rgba(255,255,0,0.1)
 }
 
 .empty-block {
@@ -396,12 +426,12 @@ footer {
 /* Media Queries */
 /*----------------------------------------------------------------------------*/
 
-@media (min-width:768px) {	
+@media (min-width:768px) {
 	.name {
 		padding-left: 1rem;
 		text-align: left;
 	}
-	
+
 	.tag-line {
 		text-align: left;
 		padding-left: 1rem;
@@ -413,52 +443,52 @@ footer {
 		font-size: 1rem;
 		font-weight: 500;
 	}
-	
+
 	ul {
 		margin: 0;
 	}
-	
+
 	.copyrite {
 		text-align: center;
 		margin-top: 0.5rem;
 		font-weight: 200;
 		font-size: 0.75rem;
 	}
-	
+
 	.desktop {
 		display: block;
 		margin: 50% auto;
 	}
-	
+
 	.footer-text {
 		font-size:0.75;
 		padding: 0.1rem;
 		text-align: center;
 		margin: 0.1rem;
 	}
-	
+
 	.game-area {
 		margin: auto 0;
 	}
-	
+
 	.mobile {
 		display: none;
 	}
-	
+
 	.section-side-section {
 		display: none;
 	}
-	
+
 	.section-main-section {
 		min-height: 60vh;
 	}
-	
+
 	.social {
 		text-align: center;
 		margin: 0;
 		padding: 0;
 	}
-	
+
 	.social-icons li a i {
 		width: 1.5rem;
 		height: 1.5rem;
@@ -473,7 +503,7 @@ footer {
 	.opaque-overlay {
 		height: 10vh;
 	}
-	
+
 	.section-main-section {
 		min-height: 80vh;
 	}

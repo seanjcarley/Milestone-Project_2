@@ -65,10 +65,68 @@
 <!-- ********************************************************************** -->
 	<section class="section">
 		<div class="row no-gutters">
-			<div class="col-md-4 section-side-section"></div>
-			<div class="col-md-8 section-main-section"></div>
+			<div class="col-md-4 section-side-section">
+					<div class="row">
+						<div class="col">
+							<h3>How to Play: </h3>
+							<ol>
+								<li>
+									Start the Game by selecting the Difficulty Level.
+								</li>
+								<li>
+									Attempt to Guess the Combination by selecting a Colour for
+									each slot.
+								</li>
+								<li>
+									Press Submit when you are ready to guess.
+								</li>
+								<li>
+									Review the results of your guess, and adjust as required
+								</li>
+							</ol>
+						</div>
+					</div>
+					<div class="row mobile">
+						<div class="col">
+							<h3>Select your Difficulty level:</h3>
+						</div>
+					</div>
+					<div class="row mobile">
+						<div class="col-md-4">
+							<button id="easy-mm" class="button">Easy</button>
+						</div>
+						<div class="col-md-4">
+							<button id="med-mm" class="button">Medium</button>
+						</div>
+						<div class="col-md-4">
+							<button id="hard-mm" class="button">Hard</button>
+						</div>
+					</div>
+			</div>
+			<div class="col-md-8 section-main-section">
+				<div class="row">
+					<div class="col-md-5">
+						<h3 class="uppercase mobile">MasterMind!</h3>
+						<h3 id="note-mob" class="uppercase desktop">MasterMind!</h3>
+					</div>
+					<div class="col-md-1"></div>
+					<div class="col-md-3">
+						<button id="start" class="button">Start</button>
+					</div>
+					<div class="col-md-3">
+						<button id="reset" class="button">Reset</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col game-area">
+						<div class="row empty-block mobile"></div>
+						<div id="target-mm" class="row"></div>
+						<div id="guess-mm" class="row"></div>
+					</div>
+				</div>
+			</div>
 		</div>
-	</section>	
+	</section>
 <!-- ********************************************************************** -->
 <!--  /Section -->
 <!-- ********************************************************************** -->
@@ -78,8 +136,8 @@
 <!-- ********************************************************************** -->
 	<footer class="footer">
 		<div class="row">
-			<div class="col-md-3">
-				<h4 class="footer-text uppercase mobile">Got a Suggestion?</h4>
+			<div class="col-md-3 mobile">
+				<h4 class="footer-text uppercase">Got a Suggestion?</h4>
 				<p class="footer-text lowercase">
 					<a href="#">
 						<span class="bold uppercase">Click Here</span>
@@ -122,7 +180,8 @@
 <!-- ********************************************************************** -->
 <!-- /Footer -->
 <!-- ********************************************************************** -->
-
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+	<script src="./assets/js/scripts/mastermind.js"></script>
 </body>
 
 </html>

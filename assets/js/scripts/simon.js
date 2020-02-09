@@ -2,7 +2,7 @@ $(document).ready(function () {
     dif = 1;
     call_back_counter = 0;
     game_state = 0;
-	game_seq = []
+	  game_seq = [];
 
 	document.getElementById("blue").addEventListener("click", function () {
 		if (game_state == 1) {
@@ -27,7 +27,7 @@ $(document).ready(function () {
 			changeCol(3);
 			checkYellow();
 		}
-	});	
+	});
 	document.getElementById("easy").addEventListener("click", function () {
         dif = 1;
     })
@@ -91,7 +91,7 @@ $(document).ready(function () {
         }
         return seq;
     }
-	
+
 	function checkBlue() {
 		repeat(0);
 		console.log("Blue");
@@ -110,20 +110,20 @@ $(document).ready(function () {
 	}
 
     /* timer and async sourced from https://stackoverflow.com/questions/3583724/how-do-i-add-a-delay-in-a-javascript-loop */
-	/* A Promise is a proxy for a value not necessarily known when the promise 
-		is created. It allows you to associate handlers with an asynchronous 
-		action's eventual success value or failure reason. This lets 
-		asynchronous methods return values like synchronous methods: instead 
-		of immediately returning the final value, the asynchronous method 
-		returns a promise to supply the value at some point in the future. 
+	/* A Promise is a proxy for a value not necessarily known when the promise
+		is created. It allows you to associate handlers with an asynchronous
+		action's eventual success value or failure reason. This lets
+		asynchronous methods return values like synchronous methods: instead
+		of immediately returning the final value, the asynchronous method
+		returns a promise to supply the value at some point in the future.
 		https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
-	
+
 	*/
-		
+
     function timer(ms) {
         return new Promise(res => setTimeout(res, ms));
     }
-    
+
     async function pulse(ary) {
         for (var i = 0; i < ary.length; i++) {
             changeCol(ary[i]);
@@ -172,7 +172,7 @@ $(document).ready(function () {
             }, 500);
         }
     }
-	
+
 	function repeat(num) {
 		console.log(game_seq);
 		if(game_seq.length > 1) {
@@ -199,7 +199,7 @@ $(document).ready(function () {
 			}
 		}
 	}
-	
+
     function resetGame() {
 		game_state = 0;
 		game_seq = [];
