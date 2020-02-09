@@ -40,19 +40,19 @@ $(document).ready(function () {
       </div>
       <div class="row">
         <div class="col-md-1"></div>
-        <div id="target1" class="col-md-2">
+        <div id="target1" class="col-md-2 target">
           <i class="fas fa-question" aria-hidden="true"></i>
         </div>
-        <div id="target2" class="col-md-2">
+        <div id="target2" class="col-md-2 target">
           <i class="fas fa-question" aria-hidden="true"></i>
         </div>
-        <div id="target3" class="col-md-2">
+        <div id="target3" class="col-md-2 target">
           <i class="fas fa-question" aria-hidden="true"></i>
         </div>
-        <div id="target4" class="col-md-2">
+        <div id="target4" class="col-md-2 target">
           <i class="fas fa-question" aria-hidden="true"></i>
         </div>
-        <div id="target5" class="col-md-2">
+        <div id="target5" class="col-md-2 target">
           <i class="fas fa-question" aria-hidden="true"></i>
         </div>
         <div class="col-md-1"></div>
@@ -65,11 +65,11 @@ $(document).ready(function () {
       </div>
       <div class="row">
         <div class="col-md-1"></div>
-        <div id="guess1" class="col-md-2"></div>
-        <div id="guess2" class="col-md-2"></div>
-        <div id="guess3" class="col-md-2"></div>
-        <div id="guess4" class="col-md-2"></div>
-        <div id="guess5" class="col-md-2"></div>
+        <div id="guess1" class="col-md-2 target"></div>
+        <div id="guess2" class="col-md-2 target"></div>
+        <div id="guess3" class="col-md-2 target"></div>
+        <div id="guess4" class="col-md-2 target"></div>
+        <div id="guess5" class="col-md-2 target"></div>
         <div class="col-md-1"></div>
       </div>
       <div class="row empty-block mobile"></div>
@@ -80,11 +80,11 @@ $(document).ready(function () {
       </div>
       <div class="row">
         <div class="col-md-1"></div>
-        <div id="pguess1" class="col-md-2"></div>
-        <div id="pguess2" class="col-md-2"></div>
-        <div id="pguess3" class="col-md-2"></div>
-        <div id="pguess4" class="col-md-2"></div>
-        <div id="pguess5" class="col-md-2"></div>
+        <div id="pguess1" class="col-md-2 target"></div>
+        <div id="pguess2" class="col-md-2 target"></div>
+        <div id="pguess3" class="col-md-2 target"></div>
+        <div id="pguess4" class="col-md-2 target"></div>
+        <div id="pguess5" class="col-md-2 target"></div>
         <div class="col-md-1"></div>
       </div>
     `)
@@ -114,11 +114,11 @@ $(document).ready(function () {
       <form>
         <select id="playerinput1" name="colors">
           <option value="select">Select</option>
-          <option value="0">Red</option>
-          <option value="1">Orange</option>
-          <option value="2">Yellow</option>
-          <option value="3">Green</option>
-          <option value="4">Blue</option>
+          <option id="sored" value="0">Red</option>
+          <option id="soorange" value="1">Orange</option>
+          <option id="soyellow" value="2">Yellow</option>
+          <option id="sogreen" value="3">Green</option>
+          <option id="soblue" value="4">Blue</option>
         </select>
       </form>
     `);
@@ -126,23 +126,23 @@ $(document).ready(function () {
       <form>
         <select id="playerinput2" name="colors">
           <option value="select">Select</option>
-          <option value="0">Red</option>
-          <option value="1">Orange</option>
-          <option value="2">Yellow</option>
-          <option value="3">Green</option>
-          <option value="4">Blue</option>
-        </select>
+          <option id="sored" value="0">Red</option>
+          <option id="soorange" value="1">Orange</option>
+          <option id="soyellow" value="2">Yellow</option>
+          <option id="sogreen" value="3">Green</option>
+          <option id="soblue" value="4">Blue</option>
+          </select>
       </form>
     `);
     $("#guess3").html(`
       <form>
         <select id="playerinput3" name="colors">
           <option value="select">Select</option>
-          <option value="0">Red</option>
-          <option value="1">Orange</option>
-          <option value="2">Yellow</option>
-          <option value="3">Green</option>
-          <option value="4">Blue</option>
+          <option id="sored" value="0">Red</option>
+          <option id="soorange" value="1">Orange</option>
+          <option id="soyellow" value="2">Yellow</option>
+          <option id="sogreen" value="3">Green</option>
+          <option id="soblue" value="4">Blue</option>
         </select>
       </form>
     `);
@@ -150,11 +150,11 @@ $(document).ready(function () {
       <form>
         <select id="playerinput4" name="colors">
           <option value="select">Select</option>
-          <option value="0">Red</option>
-          <option value="1">Orange</option>
-          <option value="2">Yellow</option>
-          <option value="3">Green</option>
-          <option value="4">Blue</option>
+          <option id="sored" value="0">Red</option>
+          <option id="soorange" value="1">Orange</option>
+          <option id="soyellow" value="2">Yellow</option>
+          <option id="sogreen" value="3">Green</option>
+          <option id="soblue" value="4">Blue</option>
         </select>
       </form>
     `);
@@ -162,12 +162,12 @@ $(document).ready(function () {
       <form>
         <select id="playerinput5" name="colors">
           <option value="select">Select</option>
-          <option value="0">Red</option>
-          <option value="1">Orange</option>
-          <option value="2">Yellow</option>
-          <option value="3">Green</option>
-          <option value="4">Blue</option>
-        </select>
+          <option id="sored" value="0">Red</option>
+          <option id="soorange" value="1">Orange</option>
+          <option id="soyellow" value="2">Yellow</option>
+          <option id="sogreen" value="3">Green</option>
+          <option id="soblue" value="4">Blue</option>
+          </select>
       </form>
     `);
   }
@@ -185,28 +185,46 @@ $(document).ready(function () {
 
   function populatePrevGuess(ary1) {
     for(var i = 0; i < ary1.length; i++) {
-      var slot = "pguess" + (i + 1);
-      var otpt = document.getElementById(slot);
-      if(Number(ary1[i]) == 0) {
-        otpt.html(`<p>RED</p>`);
-      } else if(Number(ary1[i]) == 1) {
-        otpt.html(`<p>ORANGE</p>`);
+      var slot = "#pguess" + (i + 1);
+      if(ary1[i] == 0) {
+        col = "Red";
+      } else if(ary1[i] == 1) {
+        col = "Orange";
       } else if(ary1[i] == 2) {
-        otpt.html(`<p>YELLOW</p>`);
+        col = "Yellow";
       } else if(ary1[i] == 3) {
-        otpt.html(`<p>GREEN</p>`);
+        col = "Green";
       } else {
-        otpt.html(`<p>BLUE</p>`);
+        col = "Blue";
       }
+      $(slot).html(`<h3>${col}</h3>`);
     }
-    //plyr_guess = [];
   }
 
   function checkGuess(ary1, ary2) {
     console.log(ary1, ary2);
     for(i in ary1) {
       if(ary1[i] == ary2[i]) {
-        console.log("Position " + (Number(i) + 1) + " is Correct");
+        if(ary1[i] == 0) {
+          col = "red";
+          col2 = "yellow"
+        } else if(ary1[i] == 1) {
+          col = "orange";
+          col2 = "red"
+        } else if(ary1[i] == 2) {
+          col = "yellow";
+          col2 = "blue"
+        } else if(ary1[i] == 3) {
+          col = "green";
+          col2 = "orange"
+        } else {
+          col = "blue";
+          col2 = "green"
+        }
+        var slot = "#target" + (Number(i) + 1);
+        $(slot).css("background-color", col);
+        $(slot).css("color", col2);
+        $(slot).html(`<i class="far fa-check-square" aria-hidden="true"></i>`);
       }
     }
   }
@@ -215,12 +233,12 @@ $(document).ready(function () {
     let seq_count = 0;
     if(dif == "easy") {
       while(seq_count < 3) {
-        seq.push(Math.floor(Math.random() * 3));
+        seq.push(Math.floor(Math.random() * 5));
         seq_count++;
       }
     } else if(dif == "med") {
       while(seq_count < 4) {
-        seq.push(Math.floor(Math.random() * 4));
+        seq.push(Math.floor(Math.random() * 5));
         seq_count++;
       }
     } else {

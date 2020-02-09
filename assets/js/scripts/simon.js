@@ -44,7 +44,7 @@ $(document).ready(function () {
         dif = 6;
     })
 	document.getElementById("reset").addEventListener("click", function () {
-        $("#game-outcome").text("");
+    $("#game-outcome").text("");
 		$("#level").text("");
 		resetGame();
     })
@@ -59,7 +59,7 @@ $(document).ready(function () {
 		pulse(getSeq(dif));
     })
 	document.getElementById("start-mob").addEventListener("click", function () {
-        $("#start-mob").addClass("mobile");
+    $("#start-mob").addClass("mobile");
 		$("#reset-mob").addClass("mobile");
 		$("#med-mob").addClass("mobile");
 		$("#hard-mob").addClass("mobile");
@@ -174,7 +174,6 @@ $(document).ready(function () {
     }
 
 	function repeat(num) {
-		console.log(game_seq);
 		if(game_seq.length > 1) {
 			if (num == game_seq[0]) {
 				game_seq.shift();
