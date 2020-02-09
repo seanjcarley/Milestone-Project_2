@@ -169,6 +169,11 @@ section {
 	display: block;
 }
 
+form {
+  padding: 0;
+  margin: 0 auto;
+}
+
 /* Side-Section */
 .section-side-section {
     background-color: var(--clr-scm-15);
@@ -260,7 +265,8 @@ section {
 }
 
 #start,
-#reset {
+#reset,
+#guess {
 	width:5rem;
 	height: 2rem;
 	text-align: center;
@@ -270,14 +276,16 @@ section {
 }
 
 #start:active,
-#reset:active {
+#reset:active,
+#guess:active {
 	background-color: var(--clr-scm-14);
 	color: var(--clr-scm-12);
 	border: none;
 }
 
 #start:hover,
-#reset:hover {
+#reset:hover,
+#guess:hover {
 	font-weight: 600;
 }
 
