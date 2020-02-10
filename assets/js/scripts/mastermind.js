@@ -1,61 +1,87 @@
 $(document).ready(function () {
   dif = "easy";
-  call_back_counter = 0;
   guess_count = 0;
-  game_seq = [];
   plyr_guess = [];
   seq = [];
   document.getElementById("easy-mm").addEventListener("click", function () {
     dif = "easy";
-    createGameArea("easy");
   });
   document.getElementById("med-mm").addEventListener("click", function () {
     dif = "med";
-    createGameArea("med");
   });
   document.getElementById("hard-mm").addEventListener("click", function () {
     dif = "hard";
-    createGameArea("hard");
+  });
+  document.getElementById("easy-mob").addEventListener("click", function () {
+    dif = "easy";
+  });
+  document.getElementById("med-mob").addEventListener("click", function () {
+    dif = "med";
+  });
+  document.getElementById("hard-mob").addEventListener("click", function () {
+    dif = "hard";
   });
   document.getElementById("start").addEventListener("click", function () {
+    if(dif == "easy") {
+      createGameArea("easy");
+    } else if(dif == "med") {
+      createGameArea("med");
+    } else {
+      createGameArea("hard");
+    }
     createGuessMenues();
     generateCode(dif);
   });
   document.getElementById("reset").addEventListener("click", function () {
-    createGameArea("reset");
+    reset();
   });
   document.getElementById("guess").addEventListener("click", function () {
-    console.log(seq.length);
     plyrGuess(dif, seq.length);
   });
-
+  document.getElementById("start-mob").addEventListener("click", function () {
+    if(dif == "easy") {
+      createGameArea("easy");
+    } else if(dif == "med") {
+      createGameArea("med");
+    } else {
+      createGameArea("hard");
+    }
+    createGuessMenues();
+    generateCode(dif);
+  });
+  document.getElementById("reset-mob").addEventListener("click", function () {
+    reset();
+  });
+  document.getElementById("guess-mob").addEventListener("click", function () {
+    plyrGuess(dif, seq.length);
+  });
 
   function createGameArea(dif) {
     $(".game-area").html(`
       <div class="row empty-block mobile"></div>
-      <divclass="row">
+      <divclass="row mobile">
         <div class="col-md-12">
           <h3>Reveal the Code!</h3>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-1"></div>
-        <div id="target1" class="col-md-2 target">
+        <div class="col-1 col-md-1"></div>
+        <div id="target1" class="col-2 col-md-2 target">
           <i class="fas fa-question" aria-hidden="true"></i>
         </div>
-        <div id="target2" class="col-md-2 target">
+        <div id="target2" class="col-2 col-md-2 target">
           <i class="fas fa-question" aria-hidden="true"></i>
         </div>
-        <div id="target3" class="col-md-2 target">
+        <div id="target3" class="col-2 col-md-2 target">
           <i class="fas fa-question" aria-hidden="true"></i>
         </div>
-        <div id="target4" class="col-md-2 target">
+        <div id="target4" class="col-2 col-md-2 target">
           <i class="fas fa-question" aria-hidden="true"></i>
         </div>
-        <div id="target5" class="col-md-2 target">
+        <div id="target5" class="col-2 col-md-2 target">
           <i class="fas fa-question" aria-hidden="true"></i>
         </div>
-        <div class="col-md-1"></div>
+        <div class="col-1 col-md-1"></div>
       </div>
       <div class="row empty-block mobile"></div>
       <divclass="row">
@@ -64,28 +90,28 @@ $(document).ready(function () {
         </div>
       </div>
       <div class="row">
-        <div class="col-md-1"></div>
-        <div id="guess1" class="col-md-2 target"></div>
-        <div id="guess2" class="col-md-2 target"></div>
-        <div id="guess3" class="col-md-2 target"></div>
-        <div id="guess4" class="col-md-2 target"></div>
-        <div id="guess5" class="col-md-2 target"></div>
-        <div class="col-md-1"></div>
+        <div class="col-1 col-md-1"></div>
+        <div id="guess1" class="col-2 col-md-2 target"></div>
+        <div id="guess2" class="col-2 col-md-2 target"></div>
+        <div id="guess3" class="col-2 col-md-2 target"></div>
+        <div id="guess4" class="col-2 col-md-2 target"></div>
+        <div id="guess5" class="col-2 col-md-2 target"></div>
+        <div class="col-1 col-md-1"></div>
       </div>
       <div class="row empty-block mobile"></div>
       <divclass="row">
         <div class="col-md-12">
-          <h3>Previous Guesses</h3>
+          <h3>Previous Guess</h3>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-1"></div>
-        <div id="pguess1" class="col-md-2 target"></div>
-        <div id="pguess2" class="col-md-2 target"></div>
-        <div id="pguess3" class="col-md-2 target"></div>
-        <div id="pguess4" class="col-md-2 target"></div>
-        <div id="pguess5" class="col-md-2 target"></div>
-        <div class="col-md-1"></div>
+        <div class="col-1 col-md-1"></div>
+        <div id="pguess1" class="col-2 col-md-2 target"></div>
+        <div id="pguess2" class="col-2 col-md-2 target"></div>
+        <div id="pguess3" class="col-2 col-md-2 target"></div>
+        <div id="pguess4" class="col-2 col-md-2 target"></div>
+        <div id="pguess5" class="col-2 col-md-2 target"></div>
+        <div class="col-1 col-md-1"></div>
       </div>
     `)
     if(dif == "easy") {
@@ -114,11 +140,11 @@ $(document).ready(function () {
       <form>
         <select id="playerinput1" name="colors">
           <option value="select">Select</option>
-          <option id="sored" value="0">Red</option>
-          <option id="soorange" value="1">Orange</option>
-          <option id="soyellow" value="2">Yellow</option>
-          <option id="sogreen" value="3">Green</option>
-          <option id="soblue" value="4">Blue</option>
+          <option class="sored" value="0">Red</option>
+          <option class="soorange" value="1">Orange</option>
+          <option class="soyellow" value="2">Yellow</option>
+          <option class="sogreen" value="3">Green</option>
+          <option class="soblue" value="4">Blue</option>
         </select>
       </form>
     `);
@@ -126,11 +152,11 @@ $(document).ready(function () {
       <form>
         <select id="playerinput2" name="colors">
           <option value="select">Select</option>
-          <option id="sored" value="0">Red</option>
-          <option id="soorange" value="1">Orange</option>
-          <option id="soyellow" value="2">Yellow</option>
-          <option id="sogreen" value="3">Green</option>
-          <option id="soblue" value="4">Blue</option>
+          <option class="sored" value="0">Red</option>
+          <option class="soorange" value="1">Orange</option>
+          <option class="soyellow" value="2">Yellow</option>
+          <option class="sogreen" value="3">Green</option>
+          <option class="soblue" value="4">Blue</option>
           </select>
       </form>
     `);
@@ -138,11 +164,11 @@ $(document).ready(function () {
       <form>
         <select id="playerinput3" name="colors">
           <option value="select">Select</option>
-          <option id="sored" value="0">Red</option>
-          <option id="soorange" value="1">Orange</option>
-          <option id="soyellow" value="2">Yellow</option>
-          <option id="sogreen" value="3">Green</option>
-          <option id="soblue" value="4">Blue</option>
+          <option class="sored" value="0">Red</option>
+          <option class="soorange" value="1">Orange</option>
+          <option class="soyellow" value="2">Yellow</option>
+          <option class="sogreen" value="3">Green</option>
+          <option class="soblue" value="4">Blue</option>
         </select>
       </form>
     `);
@@ -150,11 +176,11 @@ $(document).ready(function () {
       <form>
         <select id="playerinput4" name="colors">
           <option value="select">Select</option>
-          <option id="sored" value="0">Red</option>
-          <option id="soorange" value="1">Orange</option>
-          <option id="soyellow" value="2">Yellow</option>
-          <option id="sogreen" value="3">Green</option>
-          <option id="soblue" value="4">Blue</option>
+          <option class="sored" value="0">Red</option>
+          <option class="soorange" value="1">Orange</option>
+          <option class="soyellow" value="2">Yellow</option>
+          <option class="sogreen" value="3">Green</option>
+          <option class="soblue" value="4">Blue</option>
         </select>
       </form>
     `);
@@ -162,25 +188,39 @@ $(document).ready(function () {
       <form>
         <select id="playerinput5" name="colors">
           <option value="select">Select</option>
-          <option id="sored" value="0">Red</option>
-          <option id="soorange" value="1">Orange</option>
-          <option id="soyellow" value="2">Yellow</option>
-          <option id="sogreen" value="3">Green</option>
-          <option id="soblue" value="4">Blue</option>
+          <option class="sored" value="0">Red</option>
+          <option class="soorange" value="1">Orange</option>
+          <option class="soyellow" value="2">Yellow</option>
+          <option class="sogreen" value="3">Green</option>
+          <option class="soblue" value="4">Blue</option>
           </select>
       </form>
     `);
   }
 
+  function reset() {
+    $(".game-area").html(``);
+    dif = "easy";
+  }
+
   function plyrGuess(dif, num) {
+    count = 0;
     for(var i = 0; i < num; i++) {
       var slot = "playerinput" + (i + 1);
       var inpt = document.getElementById(slot).value;
-      plyr_guess.push(Number(inpt));
+      if(inpt == "select") {
+        count++;
+      } else {
+        plyr_guess.push(Number(inpt));
+      }
     }
-    checkGuess(seq, plyr_guess);
-    populatePrevGuess(plyr_guess);
-    plyr_guess = [];
+    if(count > 0) {
+      alert("Please Complete your Guess!")
+    } else {
+      checkGuess(seq, plyr_guess);
+      populatePrevGuess(plyr_guess);
+      plyr_guess = [];
+    }
   }
 
   function populatePrevGuess(ary1) {
@@ -197,12 +237,11 @@ $(document).ready(function () {
       } else {
         col = "Blue";
       }
-      $(slot).html(`<h3>${col}</h3>`);
+      $(slot).html(`<h4>${col}</h4>`);
     }
   }
 
   function checkGuess(ary1, ary2) {
-    console.log(ary1, ary2);
     for(i in ary1) {
       if(ary1[i] == ary2[i]) {
         if(ary1[i] == 0) {

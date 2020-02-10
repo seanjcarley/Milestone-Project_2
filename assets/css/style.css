@@ -10,16 +10,6 @@
     --clr-scm-13: #f6f5ae; /* pale yellow */
     --clr-scm-14: #f5f749; /* less pale yellow */
     --clr-scm-15: #f24236; /* red */
-    --clr-scm-21: #d9e5d6;
-    --clr-scm-22: #00a7e1;
-    --clr-scm-23: #eddea4;
-    --clr-scm-24: #f7a072;
-    --clr-scm-25: #ff9b42;
-    --clr-scm-31: #006ba6;
-    --clr-scm-32: #0496ff;
-    --clr-scm-33: #ffbc42;
-    --clr-scm-34: #d81159;
-    --clr-scm-35: #8f2d56;
 }
 
 /*----------------------------------------------------------------------------*/
@@ -135,8 +125,7 @@ header {
 
 .name {
     font-weight: 500;
-    /* font-size: 2rem; */
-	text-align: center;
+	  text-align: center;
     color: var(--clr-scm-13);
 }
 
@@ -144,7 +133,7 @@ header {
     position: absolute;
     top: 0;
     left: 0;
-	height: 18vh;
+	  height: 18vh;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
 }
@@ -156,7 +145,6 @@ header {
 
 .tag-line {
 	font-weight: 200;
-    /* font-size: 1.5rem; */
 	text-align: center;
     color: var(--clr-scm-14);
 }
@@ -208,7 +196,8 @@ form {
 
 
 /* Main-Section */
-.desktop {
+.desktop,
+.desktop-1 {
 	display: none;
 }
 
@@ -217,6 +206,16 @@ form {
     color: var(--clr-scm-15);
     padding: 1rem;
 	  min-height: 75vh;
+}
+
+.main-section-header {
+  text-decoration: none;
+  color: var(--clr-scm-15);
+}
+
+.main-section-header:hover {
+  text-decoration: none;
+  color: var(--clr-scm-14);
 }
 
 .target {
@@ -239,34 +238,37 @@ form {
 	margin: 0;
 }
 
-#sored {
+.sored {
   background-color: red;
   color: yellow;
 }
 
-#soorange {
+.soorange {
   background-color: orange;
   color: red;
 }
 
-#soyellow {
+.soyellow {
   background-color: yellow;
   color: blue;
 }
 
-#sogreen {
+.sogreen {
   background-color: green;
   color: orange;
 }
 
-#soblue {
+.soblue {
   background-color: blue;
   color: orange;
 }
 
 #start,
 #reset,
-#guess {
+#guess,
+#start-mob,
+#reset-mob,
+#guess-mob {
 	width:5rem;
 	height: 2rem;
 	text-align: center;
@@ -277,7 +279,10 @@ form {
 
 #start:active,
 #reset:active,
-#guess:active {
+#guess:active,
+#start-mob:active,
+#reset-mob:active,
+#guess-mob:active {
 	background-color: var(--clr-scm-14);
 	color: var(--clr-scm-12);
 	border: none;
@@ -285,7 +290,10 @@ form {
 
 #start:hover,
 #reset:hover,
-#guess:hover {
+#guess:hover,
+#start-mob:hover,
+#reset-mob:hover,
+#guess-mob:hover {
 	font-weight: 600;
 }
 
@@ -468,6 +476,11 @@ footer {
 		margin: 50% auto;
 	}
 
+  .desktop-1 {
+		display: block;
+		margin: 0;
+	}
+
 	.footer-text {
 		font-size:0.75;
 		padding: 0.1rem;
@@ -477,6 +490,7 @@ footer {
 
 	.game-area {
 		margin: auto 0;
+    padding: 0;
 	}
 
 	.mobile {
@@ -505,6 +519,56 @@ footer {
 		padding: 0;
 		margin: 0;
 	}
+
+  #start-mob,
+  #reset-mob,
+  #guess-mob,
+  #easy-mob,
+  #med-mob,
+  #hard-mob {
+  	width:3rem;
+  	height: 1.5rem;
+  	text-align: center;
+    font-size: 0.75rem;
+  	background-color: var(--clr-scm-15);
+  	color: var(--clr-scm-11);
+  	border: none;
+  }
+
+  #start-mob:active,
+  #reset-mob:active,
+  #guess-mob:active,
+  #easy-mob:active,
+  #med-mob:active,
+  #hard-mob:active {
+  	background-color: var(--clr-scm-14);
+  	color: var(--clr-scm-12);
+  	border: none;
+  }
+
+  #start-mob:hover,
+  #reset-mob:hover,
+  #guess-mob:hover,
+  #easy-mob:hover,
+  #med-mob:hover,
+  #hard-mob:hover {
+  	font-weight: 600;
+  }
+
+  .target {
+    font-size: 1rem;
+    margin: 0.1rem;
+  }
+
+  .col-1,
+  .col-2 {
+    padding: 0;
+  }
+
+  select {
+    width: 55px;
+    height: 25px;
+  }
 }
 
 @media (min-height:1366px) {
